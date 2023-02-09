@@ -1,0 +1,64 @@
+import java.util.Scanner;
+class temp
+
+{
+    static int top=-1;
+   
+    static int size=45;
+    static char stack[]=new char[48];
+    static char str[]=new char[53];
+    public static void main(String a[])
+    {
+    
+    
+    Scanner scan=new Scanner(System.in);
+    System.out.println("enter the string");
+    stack=scan.next().toCharArray();
+    int len=stack.length;
+    for(int i=0;i<len;i++)
+    {
+        push(stack[i]);
+    }
+    for(int i=0;i<len;i++)
+    {
+        stack[i]=pop();
+
+
+    }
+    System.out.println(" ");
+    System.out.println(stack);
+}
+public static void push(char re) {
+    if(top==size-1)
+    {
+
+        System.out.println("stack is overflow");
+    }
+    else
+    {
+        top++;
+        str[top]=re;
+        System.out.println("element suceessfully submitted");
+    }
+
+    
+}
+public static char pop()
+{
+char re=' ';
+
+   if(top==-1)
+   {
+    System.out.println("underflow");
+   }
+   else{
+   
+    re=str[top];
+    top--;
+}
+return re;
+
+}
+
+
+}
